@@ -5,5 +5,8 @@ let getJoke=()=>{
     jokeContainer.classList.remove('fade')
     fetch(url)
     .then (data=>data.json())
-
+    .then (item=>{
+        jokeContainer.textContent=`${item.joke}`
+        jokeContainer.classList.add('fade')
+    })
 }
